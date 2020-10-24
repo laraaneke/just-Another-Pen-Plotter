@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Just Another Pen Plotter</title>
+  
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script async src="js/opencv.js" onload="onOpenCvReady();"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1 class="display-2">Just Another Pen Plotter</h1>
+      <p id="status"></p>
+    </div>
+    <div>
+      <ol>
+        <li>
+          <p>
+            Scroll to the very bottom, look into the camera and press the "save
+            a still" button
+          </p>
+          <img src="" alt="" />
+        </li>
+        <li>
+          <p>
+            when then a black line drawing appears on the canvas press the
+            "download gcode button"
+          </p>
+          <img src="" alt="" />
+        </li>
+        <li>
+          <p>
+            Go to the desktop, open sourceRabbbit gcode sender and press connect
+          </p>
+          <img src="./images/icon.png" alt="" width="250" />
+        </li>
+        <li>
+          <p>
+            Double check the drawing machine making sure the x and and y cross
+            axis are 1-2cm from the corner
+          </p>
+          <img src="./images/2.jpg" width="250" alt="" />
+        </li>
+        <li>
+          <p>
+            Back to source Rabbit, press the "-x" button 2 times, then the "-y"
+            button 2 times and then the "return to 00 button" 1 time.
+          </p>
+          <img src="./images/rab5.jpg" alt="" width="250" />
+        </li>
+        <li>
+          <p>
+            Press "Browse" and select the filed you downloaded,
+            lineDrawingtogcode.gcode. (it might have a number at the end
+            eg.lineDrawingtogcode(1).gcode).
+          </p>
+          <img src="" alt="" />
+        </li>
+        <li>
+          <p>tape paper to the board and press send.</p>
+          <img src="" alt="" />
+        </li>
+        <li>
+          <p>
+            if at any point theres an error, just run in the opposite direction!
+          </p>
+          <img src="" alt="" />
+        </li>
+        <li style="list-style: none">
+          <a href="#savebtn">down to video</a>
+        </li>
+      </ol>
+    </div>
+    <div class="container">
+      <div class="inputoutput">
+        <!-- img.onload() -->
+        <div class="caption">
+          <div class="text">
+            <p>
+              Once you have taken an image by pressing the "save it" button, the
+              still should appear here. (or you can download an image from the
+              web, it should still show here)
+            </p>
+            <!-- shows selected still or image -->
+            <img src="#" id="imageSrc" alt="select image" width="400" />
+          </div>
+          <h3 class="display-5">Select File</h3>
+          <label for="fileInput">Select file: </label
+          ><input
+            class="btn btn-outline-danger"
+            type="file"
+            id="fileInput"
+            name="file"
+          />
+        </div>
+      </div>
+      <!--  -->
+      <div class="inputoutput">
+        <!-- canvas for linedrawing -->
+        <div>
+          <h3 class="display-5">line Drawing Preview</h3>
+          <p>
+            The image will be processed and the image to be printed will be
+            displayed here
+          </p>
+          <canvas id="foreach" width="350" height="350" class=""></canvas>
+          <button class="btn btn-outline-danger" type="button" id="clearbtn">
+            clear canvas
+          </button>
+          <button class="btn btn-outline-danger bg-danger" type="button">
+            <a href="#" id="download_btn2" download="lineDrawingtogcode.gcode"
+              >download Gcode</a
+            >
+          </button>
+          <div>
+            <p>
+              Once you see the line drawing you are ready to download the Gcode
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- <textarea id="text2"></textarea> -->
+      <h3 class="display-5">Save Image From Video</h3>
+    </div>
+    <script src="js/video.js"></script>
+    <script src="main.js"></script>
+      <script src="js/p5.js"></script>
+    <script src="js/addons/p5.sound.min.js"></script>
+  </body>
+</html>
+
