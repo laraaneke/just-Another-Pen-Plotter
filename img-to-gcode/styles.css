@@ -1,0 +1,13 @@
+body {
+    padding: 0;
+    margin: 0;
+  }
+  #foreach {
+    border: 1px black solid;
+  }
+  button a {
+    color: black;
+  }
+  li p {
+    font-size: 0.8rem;
+  }
